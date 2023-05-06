@@ -1,0 +1,175 @@
+:root {
+    --clr-primary-100: #dfffe6;
+    --clr-primary-500: 145, 26%, 58%;
+    /*color hsl*/
+
+    --clr-neutral-100: 175, 94%, 88%;
+    --clr-neutral-200: 212, 15%, 34%;
+    --clr-neutral-400: #303E4D;
+    --clr-neutral-600: #2C3849;
+
+    --ff-base: 'Inter', sans-serif;
+
+    --fw-regular: 400;
+    --fw-bold: 700;
+}
+
+/*body*/
+body {
+    background: linear-gradient(hsl(var(--clr-neutral-200)), var(--clr-neutral-400), hsl(var(--clr-neutral-200)));
+    font-family: var(--ff-base);
+    font-weight: var(--fw-regular);
+    padding: 1.5rem 1rem;
+    display: grid;
+}
+
+/*header*/
+.logo {
+    width: 2rem;
+}
+
+/*main*/
+.main {
+    display: grid;
+    margin: 5rem 0 4rem;
+}
+
+/*.hero*/
+.hero {
+    display: grid;
+    gap: 1rem;
+}
+
+.hero-textarea {
+    width: 100%;
+    height: calc(300px - 1rem);
+    border: none;
+    outline: none;
+    font-size: 2rem;
+    color: hsl(var(--clr-primary-500));
+    resize: none;
+    background: hsl(var(--clr-neutral-200), .8);
+    padding: .5rem;
+    max-height: fit-content;
+    border-radius: .5rem;
+}
+
+.hero-textarea::placeholder {
+    color: hsl(var(--clr-primary-500), .8);
+}
+
+.hero-textarea:focus {
+    outline: 1px solid var(--clr-primary-100);
+}
+
+.hero-textarea::selection {
+    background: hsl(var(--clr-primary-500));
+    color: hsl(var(--clr-neutral-100));
+}
+
+.hero-small {
+    color: hsl(var(--clr-primary-500));
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.hero-small::before {
+    content: url(../img/exclamation-circle.png);
+    height: 1rem;
+}
+
+.hero-botones {
+    display: grid;
+    gap: 1.5rem;
+}
+
+/*mensaje*/
+.resultado,
+.noresultado {
+    display: grid;
+    background: linear-gradient(hsl(var(--clr-primary-500)), hsl(var(--clr-neutral-100)));
+    text-align: center;
+    padding: 2rem;
+    border-radius: 2rem;
+    box-shadow: 0px 19px 50px -30px var(--clr-neutral-600);
+    max-height: 35rem;
+}
+
+/*resultado*/
+.resultado {
+    gap: 2rem;
+    margin-bottom: 1.5rem;
+
+}
+
+.resultado-texto {
+    font-size: 24px;
+    text-align: start;
+    overflow-y: auto;
+    max-height: calc(35rem - 4rem - 67px - 2rem);
+}
+
+.resultado-texto::selection {
+    background: var(--clr-neutral-400);
+    color: hsl(var(--clr-neutral-100));
+}
+
+/*noresultado*/
+.noresultado {
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+}
+
+.noresultado-img {
+    display: none;
+}
+
+.noresultado-titulo {
+    font-size: 24px;
+    font-weight: var(--fw-bold);
+    color: var(--clr-neutral-600);
+}
+
+.noresultado-texto {
+    font-size: 16px;
+    color: var(--clr-neutral-400);
+}
+
+.noresultado-texto::selection,
+.noresultado-titulo::selection {
+    background: var(--clr-neutral-400);
+    color: hsl(var(--clr-neutral-100));
+}
+
+/*scrool*/
+::-webkit-scrollbar {
+    width: 0.5rem;
+    height: 0.5rem;
+    background: hsl(var(--clr-neutral-200));
+}
+
+::-webkit-scrollbar-track {
+    margin-block: 0.5rem;
+}
+::-webkit-scrollbar-thumb{
+    background: hsl(var(--clr-neutral-100),.3);
+    border-radius: 2px;
+}
+::-webkit-scrollbar-thumb:hover{
+    background: hsl(var(--clr-neutral-100),.6);
+}
+.hero-textarea::-webkit-scrollbar{
+    border-radius: 50px;
+}
+.resultado-texto::-webkit-scrollbar{
+    background: hsl(var(--clr-neutral-100),.25);
+    border-radius: 0.2rem;
+}
+.resultado-texto::-webkit-scrollbar-thumb{
+    background: hsl(var(--clr-neutral-200),.3);
+}
+.resultado-texto::-webkit-scrollbar-thumb:hover{
+    background: hsl(var(--clr-neutral-200),.4);
+}
