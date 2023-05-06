@@ -1,12 +1,12 @@
 :root {
     --clr-primary-100: #dfffe6;
-    --clr-primary-500: 145, 26%, 58%;
+    --clr-primary-500: 267,89%,70%;/*145, 26%, 58%;*/
     /*color hsl*/
 
-    --clr-neutral-100: 175, 94%, 88%;
-    --clr-neutral-200: 212, 15%, 34%;
-    --clr-neutral-400: #303E4D;
-    --clr-neutral-600: #2C3849;
+    --clr-neutral-100: 352,22%,92%;/*175, 94%, 88%;*/
+    --clr-neutral-200: 320, 31%,82%;/*212, 15%, 34%;*/
+    --clr-neutral-400: #b493ad;/* #303E4D;*/
+    --clr-neutral-600: #d3a6c6;/*#2C3849;*/
 
     --ff-base: 'Inter', sans-serif;
 
