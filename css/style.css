@@ -173,3 +173,25 @@ body {
 .resultado-texto::-webkit-scrollbar-thumb:hover{
     background: hsl(var(--clr-neutral-200),.4);
 }
+/*table*/
+
+@media screen and (min-width:500px) {
+    body{
+        padding: 4.6rem 2.5rem 0;
+    }
+    .main{
+        display: grid;
+        margin: 7.5rem 0 4rem;
+    }
+    .hero-textarea{
+        height: 100%;
+    }
+    .hero-botones{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+@media screen and (min-width: 1000px){
+    body{
+        grid-template-columns: ;
+    }
+}
