@@ -6,9 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="img/logo-p.svg" type="image/x-icon">
+    <!-- CSS -->
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="style.css">
+    <!-- Remix icons -->
+	<link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" />
+    <!-- script  -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> 
     <script type="text/javascript" src="script.js"></script>
     <title>Encriptador</title>
@@ -22,8 +26,7 @@
     <!--seccion de encriptado-->
     <main class="main">
         <section class="hero">
-            <textarea class="hero-textarea" name="" id="" cols="30" rows="10" placeholder="Ingrese el texto" autofocus
-                required></textarea>
+            <textarea class="hero-textarea" name="" id="" cols="30" rows="10" placeholder="Ingrese el texto" autofocus required></textarea>
             <small class="hero-small">Solo letras minusculas y sin acento</small>
 
             <div class="hero-botones">
@@ -45,7 +48,49 @@
             <p class="resultado-texto"></p>
             <button class="boton-copiar" >Copiar</button>
         </div>
-        <footer></footer>
+        
     </aside>
+    <footer>
+        <body>
+            <div class="wrapper">
+                <button class="btn">
+                    <i class="ri-share-line"></i>
+                </button>
+                <ul class="list">
+                    <li class="item">
+                        <a href="https://www.instagram.com/sebas8011/" class="link ig">
+                            <i class="ri-instagram-line"></i>
+                        </a>
+                    </li>
+                    <li class="item" style="--d: 0.25s">
+                        <a href="https://www.linkedin.com/in/juan-delaossa/" class="link tw">
+                            <i class="ri-linkedin-box-fill"></i>
+                        </a>
+                    </li>
+                    <li class="item" style="--d: 0.5s">
+                        <a href="https://github.com/sebas3536" class="link sc">
+                            <i class="ri-github-fill"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div> 
+            <p class="wrapper-texto">Juan Sebastian De La Ossa &copy Copyrighy Emcriptador - 2023</p>
+    </footer>
+    <script>
+        const btnEl = document.querySelector('.btn')
+        const toggleOptions = () => {
+            const wrapperEl = document.querySelector('.wrapper')
+            const iconEl = btnEl.querySelector('i')
+
+            wrapperEl.classList.toggle('active')
+
+            if (iconEl.classList.contains('ri-share-line')) {
+                iconEl.classList.replace('ri-share-line', 'ri-close-line')
+            } else {
+                iconEl.classList.replace('ri-close-line', 'ri-share-line')
+            }
+        }
+        btnEl.addEventListener('click', toggleOptions)
+    </script>
 </body>
 </html>

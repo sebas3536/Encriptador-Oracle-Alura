@@ -1,17 +1,14 @@
+/* Import font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
 :root {
     --clr-primary-100: #dfffe6;
-    --clr-primary-500: 267, 89%, 70%;
-    /*145, 26%, 58%;*/
+    --clr-primary-500: 293, 19%, 70%;
     /*color hsl*/
-
-    --clr-neutral-100: 352, 22%, 92%;
-    /*175, 94%, 88%;*/
-    --clr-neutral-200: 320, 31%, 82%;
-    /*212, 15%, 34%;*/
-    --clr-neutral-400: #b493ad;
-    /* #303E4D;*/
-    --clr-neutral-600: #d3a6c6;
-    /*#2C3849;*/
+    --clr-neutral-100: 278, 33%, 90%;
+    --clr-neutral-200: 281, 25%, 33%;
+    --clr-neutral-400: #2E1a47;
+    --clr-neutral-600: #896391;
 
     --ff-base: 'Inter', sans-serif;
 
@@ -27,11 +24,19 @@
 
 button {
     width: 100%;
-    height: 67px;
+    height: 60px;
     font-size: 16px;
-    border-radius: 1.5rem;
+    border-radius: 2rem;
     cursor: pointer;
     align-self: flex-end;
+    background-color: var(--clr-neutral-600);
+    color: #fff;
+}
+
+.botonEncriptar:hover,
+.boton-copiar:hover,
+.botonDesencriptar:hover {
+    background-color: #c5abe2;
 }
 
 /*body*/
@@ -200,6 +205,83 @@ body {
     background: hsl(var(--clr-neutral-200), .4);
 }
 
+/*footer*/
+footer {
+    margin-top: -4rem;
+}
+
+/* botonEncriptar*/
+.wrapper {
+    position: relative;
+}
+
+.wrapper :is(.btn, .link) {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    background-color: #fff;
+    color: #151515;
+    border-radius: 50%;
+}
+
+.btn {
+    position: absolute;
+    border: none;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.active .btn,
+.btn:hover {
+    outline: 3px solid #0561ee;
+    outline-offset: -4px;
+}
+
+.item {
+    position: absolute;
+    list-style: none;
+    transition: transform 0.5s;
+    transition-delay: var(--d);
+}
+
+.wrapper.active .item:nth-child(1) {
+    transform: translateX(-65px);
+}
+
+.wrapper.active .item:nth-child(2) {
+    transform: translateY(-65px);
+}
+
+.wrapper.active .item:nth-child(3) {
+    transform: translateX(65px);
+}
+
+.link:hover {
+    color: #fff;
+    transition: background-color 0.5s;
+}
+
+.ig:hover {
+    background-image: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aeb 90%);
+}
+
+.tw:hover {
+    background-color: #1da1f2;
+}
+
+.sc:hover {
+    background-color: #707070;
+    color: inherit;
+}
+
+.wrapper-texto {
+    margin-left: 8rem;
+    margin-top: 1.4rem;
+    color: #fff;
+}
+
 /*table*/
 
 @media screen and (min-width:500px) {
@@ -286,6 +368,6 @@ body {
 
 @media screen and (min-height: 960px) {
     body {
-      align-content: center;
+        align-content: center;
     }
-  }
+}
