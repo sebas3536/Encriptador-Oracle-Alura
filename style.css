@@ -206,10 +206,10 @@ body {
 }
 
 /*footer*/
-footer {
-    margin-top: -4rem;
+footer{
+    margin-left: 55px;
+    margin-top: -3rem;
 }
-
 /* botonEncriptar*/
 .wrapper {
     position: relative;
@@ -356,6 +356,10 @@ footer {
     .noresultado-img {
         display: block;
         margin-bottom: 1rem;
+    }
+
+    .footer {
+        margin-left: 65rem;
     }
 }
 

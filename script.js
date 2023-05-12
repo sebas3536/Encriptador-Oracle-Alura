@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", function () {
             showConfirmButton: false,
             timer: 3000,
             timerProgressBar: true,
-            background: 'rgba(44, 174, 226, 0.1)',
+            background: 'rgba(255, 255, 240)',
             didOpen: (toast) => {
                 toast.addEventListener('mouseenter', Swal.stopTimer)
                 toast.addEventListener('mouseleave', Swal.resumeTimer)
