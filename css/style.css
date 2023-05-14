@@ -101,7 +101,7 @@ body {
 }
 
 .hero-small::before {
-    content: url(/img/exclamation-circle.svg);
+    content: url(./img/exclamation-circle.svg);
     height: 1rem;
 }
 
