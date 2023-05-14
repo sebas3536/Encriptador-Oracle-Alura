@@ -16,31 +16,65 @@ document.addEventListener("DOMContentLoaded", function () {
     botonDesencriptar.addEventListener('click', desencriptar);
     botonCopiar.addEventListener('click', copiar);
 
-    function encriptar() {
+    function validarTexto() {
+        let texto = heroTextarea.value.toLowerCase();
+        texto = texto.normalize('NFD').replace(/[\u0300-\u036f]/g, ''); // elimina los acentos
+        heroTextarea.value = texto.replace(/[^a-z]/g, ''); // elimina los caracteres que no sean letras minúsculas
+      }
+
+    function mostrarMensajeNoEncontrado() {
+        const Toast = Swal.mixin({
+            toast: true,
+            position: 'top-end',
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+              toast.addEventListener('mouseenter', Swal.stopTimer)
+              toast.addEventListener('mouseleave', Swal.resumeTimer)
+            }
+          })
+          
+          Toast.fire({
+            icon: 'warning',
+            title: 'No hay ningún mensaje'
+          })
+      }
+      
+      function encriptar() {
+        validarTexto();
         const texto = heroTextarea.value.toLowerCase();
-        const textoEncriptado = texto.replace(/e/g, "enter")
-            .replace(/i/g, "imes")
-            .replace(/a/g, "ai")
-            .replace(/o/g, "ober")
-            .replace(/u/g, "ufat");
-        //heroTextarea.value = textoEncriptado;
+        const textoEncriptado = texto.replace(/e/img, "enter")
+            .replace(/i/img, "imes")
+            .replace(/a/img, "ai")
+            .replace(/o/img, "ober")
+            .replace(/u/img, "ufat");
+        if (textoEncriptado.trim() === '') {
+          mostrarMensajeNoEncontrado();
+          return;
+        }
         botonCopiar.style.display = "block";
         resultadoTexto.textContent = textoEncriptado;
         changeClasses();
-    }
-
-    function desencriptar() {
+      }
+      
+      function desencriptar() {
+        validarTexto();
         const textoEncriptado = heroTextarea.value.toLowerCase();
-        const textoDesencriptado = textoEncriptado.replace(/enter/g, "e")
-            .replace(/imes/g, "i")
-            .replace(/ai/g, "a")
-            .replace(/ober/g, "o")
-            .replace(/ufat/g, "u");
-        //heroTextarea.value = textoDesencriptado;
+        const textoDesencriptado = textoEncriptado.replace(/enter/img, "e")
+            .replace(/imes/img, "i")
+            .replace(/ai/img, "a")
+            .replace(/ober/img, "o")
+            .replace(/ufat/img, "u");
+        if (textoDesencriptado.trim() === '') {
+          mostrarMensajeNoEncontrado();
+          return;
+        }
         botonCopiar.style.display = "block";
         resultadoTexto.textContent = textoDesencriptado;
         changeClasses();
-    }
+      }
+      
 
     function copiar() {
         const contenido = resultadoTexto.textContent;
@@ -64,6 +98,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }   
 
     function mostrarResultado() {
+        validarTexto();
         if (heroTextarea.value.trim() === '') {
             noresultado.style.display = 'block';
             noresultadoImg.style.display = 'block';
