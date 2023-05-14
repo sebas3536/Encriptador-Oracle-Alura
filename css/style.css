@@ -301,6 +301,9 @@ footer{
     .hero-botones {
         grid-template-columns: 1fr 1fr;
     }
+    footer {
+        margin: 1rem;
+    }
 }
 
 @media screen and (min-width: 1000px) {
@@ -358,9 +361,6 @@ footer{
         margin-bottom: 1rem;
     }
 
-    .footer {
-        margin-left: 65rem;
-    }
 }
 
 @media screen and (min-width: 1700px) {
