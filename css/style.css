@@ -207,8 +207,7 @@ body {
 
 /*footer*/
 footer{
-    margin-left: 55px;
-    margin-top: -3rem;
+    margin-left: 2.9rem;
 }
 /* botonEncriptar*/
 .wrapper {
@@ -278,13 +277,13 @@ footer{
 
 .wrapper-texto {
     margin-left: 8rem;
-    margin-top: 1.4rem;
+    margin-top: 1rem;
     color: #fff;
 }
 
 /*table*/
 
-@media screen and (min-width:500px) {
+@media screen and (min-width:400px) {
     body {
         padding: 4.6rem 2.5rem 0;
     }
@@ -302,7 +301,8 @@ footer{
         grid-template-columns: 1fr 1fr;
     }
     footer {
-        margin: 1rem;
+        margin: 2rem;
+        top: -5.5rem;
     }
 }
 
@@ -360,7 +360,7 @@ footer{
         display: block;
         margin-bottom: 1rem;
     }
-
+    
 }
 
 @media screen and (min-width: 1700px) {
